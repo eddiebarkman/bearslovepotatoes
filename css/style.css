@@ -24,19 +24,25 @@
 }
 
 
-#cardLookup{
+#url{
     
     font-size: 3em;
     color:white;
     padding:0.5em;
     background-color:indianred;
     border-radius: 0.25em;
+    width:100%;
     
 }
 
 .opacity75{
     
     opacity: 0.75;
+    
+}
+
+.red{
+    color:red;
     
 }
 
