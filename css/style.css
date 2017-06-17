@@ -35,6 +35,15 @@
     
 }
 
+#animatedCard{
+    height:600px;
+    width:800px;
+    background-color: red;
+    
+    
+}
+
+
 .opacity75{
     
     opacity: 0.75;
