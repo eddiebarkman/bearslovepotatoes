@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Bears Love Potatoes</title>
-    <link rel="stylesheet" href="css/bulma.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/bulma.css" type="text/css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
 
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -57,17 +58,25 @@
 
                     <script>
                         function process() {
-                            var url = "https://bearsloveto.party/" + document.getElementById("url").value;
+                            var url = "http://bearsloveto.party/" + document.getElementById("url").value;
                             location.href = url;
                             return false;
                         }
                     </script>
-
-                    <div class="field">
-                        <p class="control">
+                    <div id="IDEnter" class="field">
+                        <p class="control has-icons-left">
                             <form onSubmit="return process();">
-                                <input type="text" name="url" id="url" placeholder="Card ID">
-                                <!--    <input type="submit" value="go">-->
+
+                                <div class="field">
+                                    <p class="control has-icons-left">
+                                        <input class="input is-large" type="text" name="url" id="url" placeholder="Card ID">
+                                        <span class="icon is-medium is-left">
+                                          <i class="fa fa-barcode"></i>
+                                        </span>
+                                    </p>
+                                </div>
+
+
                             </form>
                         </p>
                     </div>

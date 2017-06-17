@@ -6,20 +6,21 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Bears Love Potatoes</title>
     <link rel="stylesheet" href="../css/bulma.css" type="text/css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="..//apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="../manifest.json">
-    <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="theme-color" content="#ffffff">
 
 
 </head>
 
-<body onload="load_home()">
+<body>
 
 
     <section id="mainPage" class="hero is-success is-fullheight">
@@ -28,7 +29,7 @@
             <div class="container">
                 <div class="nav-left">
                     <a class="nav-item">
-                        <img src="../images/title.png" alt="Bears Logo">
+                        <img src="/images/title.png" alt="Bears Logo">
                     </a>
                     <a class="nav-item is-tab is-hidden-mobile is-active">Home</a>
                     <a class="nav-item is-tab is-hidden-mobile">About</a>
@@ -48,33 +49,34 @@
         <div class="hero-body">
             <div class="container">
 
-                <div id="animatedCard" class="column is-half is-offset-one-quarter" data="http://validator.w3.org/">
-<!--
+                <div class="column is-half is-offset-one-quarter">
                     <figure class="image is-square">
                         <img class="opacity75" src="/images/logoFull.png">
                     </figure>
--->
-                    <br>
-                    <br>
                 </div>
-                
-                
-                
                 <div class="column is-half is-offset-one-quarter">
 
                     <script>
                         function process() {
-                            var url = "https://bearsloveto.party/" + document.getElementById("url").value;
+                            var url = "http://bearsloveto.party/" + document.getElementById("url").value;
                             location.href = url;
                             return false;
                         }
                     </script>
-
-                    <div class="field">
-                        <p class="control">
+                    <div id="IDEnter" class="field">
+                        <p class="control has-icons-left">
                             <form onSubmit="return process();">
-                                <input type="text" name="url" id="url" placeholder="Card ID">
-                                <!--    <input type="submit" value="go">-->
+
+                                <div class="field">
+                                    <p class="control has-icons-left">
+                                        <input class="input is-large" type="text" name="url" id="url" placeholder="Card ID">
+                                        <span class="icon is-medium is-left">
+                                          <i class="fa fa-barcode"></i>
+                                        </span>
+                                    </p>
+                                </div>
+
+
                             </form>
                         </p>
                     </div>
@@ -84,6 +86,9 @@
         </div>
 
     </section>
+
+
+
 
 
 </body>
