@@ -112,7 +112,7 @@
 
                     <div id="IDEnter" class="field animated bounceInUp">
 
-                        <form onSubmit="loadCard(); return false">
+                        <form onSubmit="process(); return false">
 
                             <div class="field has-addons" data-balloon="It's the 8 character code on the back of your card!" data-balloon-pos="up">
                                 
@@ -157,20 +157,15 @@
                         function process() {
                             var cardID = "http://bearsloveto.party/cards/" + document.getElementById("url").value;
 //                          location.href = url;
+                            $("#cardLoader").html('<object id="cardLoaderInside" data="">');
+                            
+                            document.getElementById("cardLoaderInside").setAttribute("data", cardID);
+                        
                             return false;
 
                         }
                     </script>
     
-    
-    <script>
-
-        function loadCard(){
-                    $("#cardLoader").html('<object id="cardLoaderInside" data="cardID">');
-        }
-
-    </script>
-
 </body>
 
 </html>
