@@ -164,7 +164,9 @@
                 error: function()
                 {
 
-                    $("#cardLoader").html('<object id="cardLoaderInside" data="http://bearsloveto.party/cards/error/">');        
+//                    $("#cardLoader").html('<object id="cardLoaderInside" data="http://bearsloveto.party/cards/error/">');        
+                    document.getElementById('cardLoader').innerHTML = '<div id="cardLoader" class="column is-8 is-offset-2"><figure class="image is-square"><img id="bearLogo" class="opacity75 animated jello" src="/images/errorLogo.png"></figure> <span class="tag errorColor"> Card ID not found, please try again!</span></div>';
+                    return false;
                     //file not exists
                 },
                 success: function()

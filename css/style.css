@@ -89,6 +89,11 @@ i{
     color:white;
 }
 
+.errorColor{
+    background-color:darkred;
+    color: white;
+}
+
 
 ::-webkit-input-placeholder { /* Chrome */
   color: white;
