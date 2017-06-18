@@ -30,26 +30,26 @@
 
 <div class="potatoHeart animated zoomIn is-hidden-touch">
     <figure class="image is-pulled-right">
-        <img class="opacity75" src="/images/potatoheartRight.png">
+        <img class="opacity75" src="/images/potatoHeartRight.png">
     </figure>
 </div>
     
  <div class="potatoHeart2 animated zoomIn is-hidden-touch">
     <figure class="image is-pulled-right">
-        <img class="opacity75" src="/images/potatoheartLeft.png">
+        <img class="opacity75" src="/images/potatoHeartLeft.png">
     </figure>
 </div>
     
     
      <div class="potatoHeart3 animated zoomIn is-hidden-touch">
     <figure class="image is-pulled-right">
-        <img class="opacity75" src="/images/potatoheartRight.png">
+        <img class="opacity75" src="/images/potatoHeartRight.png">
     </figure>
 </div>   
     
          <div class="potatoHeart4 animated zoomIn is-hidden-touch">
     <figure class="image is-pulled-right">
-        <img class="opacity75" src="/images/potatoheartLeft.png">
+        <img class="opacity75" src="/images/potatoHeartLeft.png">
     </figure>
 </div>   
     
@@ -154,18 +154,35 @@
             <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
     
     <script>
-                        function process() {
-                            var cardID = "http://bearsloveto.party/cards/" + document.getElementById("url").value;
-//                          location.href = url;
-                            $("#cardLoader").html('<object id="cardLoaderInside" data="">');
+    function process() {
+        var cardID = "http://bearsloveto.party/cards/" + document.getElementById("url").value;
+        
                             
-                            document.getElementById("cardLoaderInside").setAttribute("data", cardID);
-                        
-                            return false;
+                $.ajax({
+                url:cardID,
+                type:'HEAD',
+                error: function()
+                {
 
+                    $("#cardLoader").html('<object id="cardLoaderInside" data="http://bearsloveto.party/cards/error/">');        
+                    //file not exists
+                },
+                success: function()
+                {
+                  $("#cardLoader").html('<object id="cardLoaderInside" data="">');                        
+                  document.getElementById("cardLoaderInside").setAttribute("data", cardID);
+                    return false;   
+                    //file exists
+                }
+            });
+                            
+           
+           
                         }
                     </script>
-    
+    <script>
+
+    </script>
 </body>
 
 </html>
