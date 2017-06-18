@@ -1,7 +1,11 @@
+
 #menu{
     background-color: #3F3831;
-    top:0px;
-    bottom:140px !important;
+    bottom:0 !important;
+    position: fixed;
+    width:100%;
+    font-family: 'Patrick Hand SC', cursive;
+    animation-delay: 0.75s;
 
 }
 
@@ -20,23 +24,54 @@
   -o-background-size: cover;
   background-size: cover;
     
+}
+
+.tile{
+    
+    text-align: center;
+}
+
+#bearLogo{
+
+}
+
+#cardLoader{
+text-align: center;
     
 }
 
-
+#cardLoaderInside{
+    width:800px;
+    height:600px;
+    
+    
+}
 #url{
     
     background-color:indianred;
     color:white;
     opacity: 0.7;
+        font-family: 'Patrick Hand SC', cursive;
 }
+
+
+#submitButton{
+    background-color:indianred;
+    
+}
+
+#IDEnter{
+    text-align: center;
+    animation-delay: 0.25s;
+    
+    
+}
+
 
 #animatedCard{
     height:600px;
     width:800px;
-    background-color: red;
-    
-    
+    background-color: red; 
 }
 
 
@@ -47,10 +82,12 @@
 }
 
 .red{
-    color:red;
-    
+    color:red; 
 }
 
+i{
+    color:white;
+}
 
 
 ::-webkit-input-placeholder { /* Chrome */
@@ -66,4 +103,45 @@
 :-moz-placeholder { /* Firefox 4 - 18 */
   color: white;
   opacity: 1;
+}
+
+.potatoHeart{
+    
+  position:absolute;
+  top: 123px;
+    right:100px;
+    animation-delay: 1s;
+}
+
+
+.potatoHeart2{
+    
+  position:absolute;
+  top: 50%;
+    left:160px;
+    height:150px;
+        width:150px;
+    animation-delay: 1.5s;
+}
+
+
+.potatoHeart3{
+    
+  position:absolute;
+  top: 1em ;
+    left:30em;
+    height:96px;
+        width:96px;
+    animation-delay: 1.75s;
+}
+
+
+.potatoHeart4{
+    
+  position:absolute;
+  bottom: 10em ;
+    right:3em;
+    height:60px;
+        width:60px;
+    animation-delay: 1.75s;
 }
