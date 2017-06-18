@@ -28,31 +28,31 @@
 
 <body>
 
-<div class="potatoHeart animated zoomIn is-hidden-touch">
-    <figure class="image is-pulled-right">
-        <img class="opacity75" src="/images/potatoHeartRight.png">
-    </figure>
-</div>
-    
- <div class="potatoHeart2 animated zoomIn is-hidden-touch">
-    <figure class="image is-pulled-right">
-        <img class="opacity75" src="/images/potatoHeartLeft.png">
-    </figure>
-</div>
-    
-    
-     <div class="potatoHeart3 animated zoomIn is-hidden-touch">
-    <figure class="image is-pulled-right">
-        <img class="opacity75" src="/images/potatoHeartRight.png">
-    </figure>
-</div>   
-    
-         <div class="potatoHeart4 animated zoomIn is-hidden-touch">
-    <figure class="image is-pulled-right">
-        <img class="opacity75" src="/images/potatoHeartLeft.png">
-    </figure>
-</div>   
-    
+    <div class="potatoHeart animated zoomIn is-hidden-touch">
+        <figure class="image is-pulled-right">
+            <img class="opacity75" src="/images/potatoHeartRight.png">
+        </figure>
+    </div>
+
+    <div class="potatoHeart2 animated zoomIn is-hidden-touch">
+        <figure class="image is-pulled-right">
+            <img class="opacity75" src="/images/potatoHeartLeft.png">
+        </figure>
+    </div>
+
+
+    <div class="potatoHeart3 animated zoomIn is-hidden-touch">
+        <figure class="image is-pulled-right">
+            <img class="opacity75" src="/images/potatoHeartRight.png">
+        </figure>
+    </div>
+
+    <div class="potatoHeart4 animated zoomIn is-hidden-touch">
+        <figure class="image is-pulled-right">
+            <img class="opacity75" src="/images/potatoHeartLeft.png">
+        </figure>
+    </div>
+
 
     <section id="mainPage" class="hero is-success is-fullheight">
 
@@ -99,27 +99,27 @@
 
             <div class="container">
                 <div id="cardLoader" class="column is-8 is-offset-2">
-                    
+
                     <div id="cardLoader" class="column is-8 is-offset-2">
-                    <figure class="image is-square">
-                        <img id="bearLogo" class="opacity75 animated bounceInDown" src="/images/logoFull.png">
-                    </figure>
+                        <figure class="image is-square">
+                            <img id="bearLogo" class="opacity75 animated bounceInDown" src="/images/logoFull.png">
+                        </figure>
                     </div>
-                    
+
                 </div>
                 <div class="column is-half is-offset-one-quarter">
-                    
+
 
                     <div id="IDEnter" class="field animated bounceInUp">
 
                         <form onSubmit="process(); return false">
 
                             <div class="field has-addons" data-balloon="It's the 8 character code on the back of your card!" data-balloon-pos="up">
-                                
+
                                 <p class="control has-icons-left is-expanded">
-                                    
-                                    <input class="input is-large is-full-width IDNumber" type="text" name="url" id="url" placeholder="Enter your card ID " >
-                                    
+
+                                    <input class="input is-large is-full-width IDNumber" type="text" name="url" id="url" placeholder="Enter your card ID ">
+
                                     <span class="icon is-medium is-left">
                                         
                                           <i class="fa fa-barcode"></i>
@@ -151,39 +151,36 @@
         });
     </script>
 
-            <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    
-    <script>
-    function process() {
-        var cardID = "http://bearsloveto.party/cards/" + document.getElementById("url").value;
-        
-                            
-                $.ajax({
-                url:cardID,
-                type:'HEAD',
-                error: function()
-                {
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 
-//                    $("#cardLoader").html('<object id="cardLoaderInside" data="http://bearsloveto.party/cards/error/">');        
+    <script>
+        function process() {
+            var cardID = "http://bearsloveto.party/cards/" + document.getElementById("url").value;
+
+
+            $.ajax({
+                url: cardID,
+                type: 'HEAD',
+                error: function () {
+
+                    //                    $("#cardLoader").html('<object id="cardLoaderInside" data="http://bearsloveto.party/cards/error/">');        
                     document.getElementById('cardLoader').innerHTML = '<div id="cardLoader" class="column is-8 is-offset-2"><figure class="image is-square"><img id="bearLogo" class="opacity75 animated jello" src="/images/errorLogo.png"></figure> <span class="tag errorColor"> Card ID not found, please try again!</span></div>';
                     return false;
                     //file not exists
                 },
-                success: function()
-                {
-                  $("#cardLoader").html('<object id="cardLoaderInside" data="">');                        
-                  document.getElementById("cardLoaderInside").setAttribute("data", cardID);
-                    return false;   
+                success: function () {
+                    $("#cardLoader").html('<object id="cardLoaderInside" data="">');
+                    document.getElementById("cardLoaderInside").setAttribute("data", cardID);
+                    return false;
                     //file exists
                 }
             });
-                            
-           
-           
-                        }
-                    </script>
-    <script>
 
+
+
+        }
+    </script>
+    <script>
     </script>
 </body>
 
