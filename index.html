@@ -71,8 +71,8 @@
                     <a href="http://blog.bearsloveto.party" target="_blank" class="nav-item is-tab is-hidden-mobile">
                         <span class="icon"><i class="fa fa-tree"></i></span> Blog
                     </a>
-                    <a class="nav-item is-tab is-hidden-mobile">
-                        <span class="icon"><i class="fa fa-heart"></i></span> Cards
+                    <a href="https://www.etsy.com/shop/BearsLovePotatoes" target="_blank" class="nav-item is-tab is-hidden-mobile">
+                        <span class="icon"><i class="fa fa-heart"></i></span> Shop
                     </a>
                 </div>
 
@@ -140,7 +140,6 @@
             </div>
         </div>
     </section>
-
     <script>
         var cleave = new Cleave('.IDNumber', {
             delimiters: ['-'],
@@ -167,7 +166,7 @@
                     //file not exists
                 },
                 success: function () {
-                    $("#cardLoader").html('<object id="cardLoaderInside" data="">');
+                    $("#cardLoader").html('<object id="cardLoaderInside" class="effect7" data="">');
                     document.getElementById("cardLoaderInside").setAttribute("data", cardID);
                     return false;
                     //file exists
