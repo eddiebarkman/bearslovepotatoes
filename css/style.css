@@ -150,3 +150,37 @@ i{
         width:60px;
     animation-delay: 1.75s;
 }
+
+#cardLoaderInside{
+    
+    max-width:440px;
+    max-height:700px;
+/*    box-shadow: 0 10px 6px -6px #777;*/
+    	background:#FFF;
+	margin:40px auto;
+    
+}
+
+.effect7
+{
+    position:relative;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.effect7:before, .effect7:after
+{
+	content:"";
+    position:absolute; 
+    z-index:-1;
+    box-shadow:0 0 40px rgba(0,0,0,0.8);
+    top:0;
+    bottom:0;
+    left:40px;
+    right:40px;
+    border-radius:100px / 10px;
+} 
+.effect7:after
+{
+    right:10px; 
+    left:auto; 
+    transform:skew(8deg) rotate(3deg);
+}
