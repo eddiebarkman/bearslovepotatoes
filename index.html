@@ -28,26 +28,26 @@
 
 <body>
 
-    <div class="potatoHeart animated zoomIn is-hidden-touch">
+    <div id="potatoHeart" class="animated zoomIn is-hidden-touch">
         <figure class="image is-pulled-right">
             <img class="opacity75" src="/images/potatoHeartRight.png">
         </figure>
     </div>
 
-    <div class="potatoHeart2 animated zoomIn is-hidden-touch">
+    <div id="potatoHeart2" class="animated zoomIn is-hidden-touch">
         <figure class="image is-pulled-right">
             <img class="opacity75" src="/images/potatoHeartLeft.png">
         </figure>
     </div>
 
 
-    <div class="potatoHeart3 animated zoomIn is-hidden-touch">
+    <div id="potatoHeart3" class="animated zoomIn is-hidden-touch">
         <figure class="image is-pulled-right">
             <img class="opacity75" src="/images/potatoHeartRight.png">
         </figure>
     </div>
 
-    <div class="potatoHeart4 animated zoomIn is-hidden-touch">
+    <div id="potatoHeart4" class="animated zoomIn is-hidden-touch">
         <figure class="image is-pulled-right">
             <img class="opacity75" src="/images/potatoHeartLeft.png">
         </figure>
@@ -162,22 +162,54 @@
 
                     //                    $("#cardLoader").html('<object id="cardLoaderInside" data="http://bearsloveto.party/cards/error/">');        
                     document.getElementById('cardLoader').innerHTML = '<div id="cardLoader" class="column is-8 is-offset-2"><figure class="image is-square"><img id="bearLogo" class="opacity75 animated jello" src="/images/errorLogo.png"></figure> <span class="tag errorColor"> Card ID not found, please try again!</span></div>';
+                    
+                    $('#IDEnter').removeClass('animated bounceInUp');
+                    $('#IDEnter').addClass('animated shake');
+                    
+                    
                     return false;
+    
                     //file not exists
                 },
                 success: function () {
-                    $("#cardLoader").html('<object id="cardLoaderInside" class="effect7" data="">');
+                    $("#cardLoader").html('<object id="cardLoaderInside" class="effect7 animated zoomIn" data="">');
                     document.getElementById("cardLoaderInside").setAttribute("data", cardID);
+
+
                     return false;
                     //file exists
                 }
             });
 
-
-
         }
     </script>
+    
     <script>
+        function potatoPulse(){
+            $('#potatoHeart').removeClass('animated zoomIn');
+            $('#potatoHeart').addClass('animated pulse infinite');
+            
+            $('#potatoHeart2').removeClass('animated zoomIn');
+            $('#potatoHeart2').addClass('animated pulse infinite');
+            
+            $('#potatoHeart3').removeClass('animated zoomIn');
+            $('#potatoHeart3').addClass('animated pulse infinite');
+            
+            $('#potatoHeart4').removeClass('animated zoomIn');
+            $('#potatoHeart4').addClass('animated pulse infinite');
+            
+        }
+        
+        
+        
+        window.onload = function() {
+            
+            window.setTimeout(potatoPulse, 2500);
+            
+        };
+        
+        
+
     </script>
 </body>
 

@@ -110,7 +110,7 @@ i{
   opacity: 1;
 }
 
-.potatoHeart{
+#potatoHeart{
     
   position:absolute;
   top: 123px;
@@ -119,7 +119,7 @@ i{
 }
 
 
-.potatoHeart2{
+#potatoHeart2{
     
   position:absolute;
   top: 50%;
@@ -130,7 +130,7 @@ i{
 }
 
 
-.potatoHeart3{
+#potatoHeart3{
     
   position:absolute;
   top: 1em ;
@@ -141,7 +141,7 @@ i{
 }
 
 
-.potatoHeart4{
+#potatoHeart4{
     
   position:absolute;
   bottom: 10em ;
