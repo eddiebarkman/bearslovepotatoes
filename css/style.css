@@ -138,7 +138,7 @@ i {
 
 @media only screen and (max-width: 500px) {
     #cardLoaderInside {
-        width: 90%;
+        width: 80%;
         height: 50vh;
         background: #FFF;
         margin: 40px auto;
