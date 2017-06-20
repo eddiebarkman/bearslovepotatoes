@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;"/>
-<meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
 
 
     <!--320-->
@@ -30,7 +30,9 @@
 </head>
 
 <body>
+    <div id="overlay" onclick="closeNav();"></div>
 
+    <!--Dancing Potatoes-->
     <div id="potatoHeart" class="animated zoomIn is-hidden-touch">
         <figure class="image is-pulled-right">
             <img class="opacity75" src="/images/potatoHeartRight.png">
@@ -55,6 +57,21 @@
             <img class="opacity75" src="/images/potatoHeartLeft.png">
         </figure>
     </div>
+    <!--Dancing Potatoes-->
+
+    <div id="mySidenav" class="sidenav">
+        <img class="sideNavLogo opacity75 animated zoomIn" src="/images/logoFull.png">
+        <ul>
+            <li><a href="http://bearsloveto.party/" onclick="closeNav();"><span class="icon is-large"><i class="fa fa-home"></i></span><span>Home</span></a></li>
+            <li><a href="" onclick="closeNav();"><span class="icon is-large"><i class="fa fa-cloud"></i></span><span>About</span></a></li>
+            <li><a href="http://blog.bearsloveto.party/" onclick="closeNav();"><span class="icon is-large"><i class="fa fa-tree"></i></span><span>Blog</span></a></li>
+            <li class=""><a href="https://www.etsy.com/shop/BearsLovePotatoes" target="_blank"><span class="icon is-large"><i class="fa fa-heart"></i></span><span>Shop</span></a></li>
+            <li><a href="javascript:void(0)" onclick="closeNav();"><span class="icon is-large"><i class="fa fa-close"></i></span><span>Close</span></a></li>
+        </ul>
+
+    </div>
+
+
 
 
     <section id="mainPage" class="hero is-success is-fullheight">
@@ -80,17 +97,11 @@
                 </div>
 
                 <div class="nav-center">
-                    <a class="nav-item">
+                    <a href="http://bearsloveto.party" class="nav-item">
                         <img src="/images/title2.png" alt="Bears Logo">
                     </a>
 
                 </div>
-
-                <span class="nav-toggle">
-                    <span></span>
-                <span></span>
-                <span></span>
-                </span>
 
             </div>
 
@@ -98,7 +109,7 @@
 
 
         <div class="hero-body">
-
+            <i id="hambuggah" class="ham fa fa-bars" onClick="openNav();"></i>
 
             <div class="container">
                 <div id="cardLoader" class="column is-8 is-offset-2">
@@ -165,13 +176,13 @@
 
                     //                    $("#cardLoader").html('<object id="cardLoaderInside" data="http://bearsloveto.party/cards/error/">');        
                     document.getElementById('cardLoader').innerHTML = '<div id="cardLoader" class="column is-8 is-offset-2"><figure class="image is-square"><img id="bearLogo" class="opacity75 animated jello" src="/images/errorLogo.png"></figure> <span class="tag errorColor"> Card ID not found, please try again!</span></div>';
-                    
+
                     $('#IDEnter').removeClass('animated bounceInUp');
                     $('#IDEnter').addClass('animated shake');
-                    
-                    
+
+
                     return false;
-    
+
                     //file not exists
                 },
                 success: function () {
@@ -186,38 +197,91 @@
 
         }
     </script>
-    
+
     <script>
-        function potatoPulse(){
+        function potatoPulse() {
             $('#potatoHeart').removeClass('animated zoomIn');
             $('#potatoHeart').addClass('animated pulse infinite');
-            
+
             $('#potatoHeart2').removeClass('animated zoomIn');
             $('#potatoHeart2').addClass('animated pulse infinite');
-            
+
             $('#potatoHeart3').removeClass('animated zoomIn');
             $('#potatoHeart3').addClass('animated pulse infinite');
-            
+
             $('#potatoHeart4').removeClass('animated zoomIn');
             $('#potatoHeart4').addClass('animated pulse infinite');
-            
+
         }
-        
-        
-        
-        window.onload = function() {
-            
+
+
+
+        window.onload = function () {
+
             window.setTimeout(potatoPulse, 2500);
-            
+
         };
     </script>
-    
+
     <script>
-    
-    document.addEventListener('touchmove', function(e) {
-	e.preventDefault();
-}, false);
+        document.addEventListener('touchmove', function (e) {
+            e.preventDefault();
+        }, false);
     </script>
+
+
+
+    <script>
+        if (document.documentElement.clientWidth > 700) { //Larger than 700px
+            function openNav() {
+                document.getElementById("mySidenav").style.right = "0em";
+                document.getElementById("mainPage").style.marginLeft = "-25em";
+                document.getElementById("hambuggah").style.right = "9em";
+                document.getElementById("overlay").style.display = "block";
+                document.getElementById("hambuggah").style.transform = "rotate(90deg)";
+                //            $("i.ham").removeClass("fa-bars");
+                //            $("i.ham").addClass("fa-close");
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.right = "-30em";
+                document.getElementById("mainPage").style.marginLeft = "0em";
+                document.getElementById("hambuggah").style.right = "0.5em";
+                document.getElementById("hambuggah").style.transform = "rotate(0deg)";
+                document.getElementById("overlay").style.display = "none";
+                //            $("i.ham").removeClass("fa-close");
+                //            $("i.ham").addClass("fa-bars");
+
+            }
+
+        }
+
+
+        if (document.documentElement.clientWidth < 700) { //smaller than 700 px
+            function openNav() {
+                document.getElementById("mySidenav").style.right = "0em";
+                document.getElementById("mainPage").style.marginLeft = "-20em";
+                document.getElementById("hambuggah").style.right = "9em";
+                document.getElementById("overlay").style.display = "block";
+                document.getElementById("hambuggah").style.transform = "rotate(90deg)";
+                //            $("i.ham").removeClass("fa-bars");
+                //            $("i.ham").addClass("fa-close");
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.right = "-30em";
+                document.getElementById("mainPage").style.marginLeft = "0em";
+                document.getElementById("hambuggah").style.right = "0.5em";
+                document.getElementById("hambuggah").style.transform = "rotate(0deg)";
+                document.getElementById("overlay").style.display = "none";
+                //            $("i.ham").removeClass("fa-close");
+                //            $("i.ham").addClass("fa-bars");
+
+            }
+
+        }
+    </script>
+
 </body>
 
 </html>
